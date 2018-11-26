@@ -2,25 +2,21 @@
 Android Studio
 
 
-------------------------------Requirements-------------------------
+------------------------------Requirements-------------------------------
 
-1. User should be able to create profile 
-2. User should be able to login
-3. User should be able to see list of available users
-4. User should be able to send messages to other people
-5. User should be able to accept friend requests
-6. User should be able to delete friends
-7. User should be able to cancel friend requests
-8. Remote accessible data provider (Firebase database)
-9. Data provided to user in real time
-10.User should be able to receieve some live feeds on health related topics or diet
-11.User should be able to register 
-12.User should be able to recieve messages
-13.User should be able to make Posts
-14.User should be able to send email/private message to whoever made a post
-15.User should be able to edit profile 
-16.User be able to log out
-
+1.User should be able to see the UI with all necessary information 8
+2.User should be able to create profile 		9
+3.User should be able to make Posts		8
+4.User should be able to see other posts	7
+5.User should be able to display posts by category		8
+6.User should be able to send email to whoever made a post		6
+7.User should be able to send messages to other people	10
+8.User should be able to recieve messages		10
+9.User should be able to edit profile 		6
+10.User should be able to login			5
+11.User be able to log out					3
+12.User should be able to create a friend requests		7
+13.User should be able to accept/cancel friend requests		7
 --------------------------------Non Function-------------------------------
 1. App to run on android system
 2. MVVM Model View View Model
