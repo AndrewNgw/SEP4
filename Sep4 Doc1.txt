@@ -1,0 +1,73 @@
+Sprint 1 date 22/11/2018. <<1  Sprint = 2 days>>
+Sprint 2 date 26/11/2018. 
+------------------------------Requirements-------------------------
+
+*1. User should be able to create profile 						
+*2. User should be able to login					
+
+*4. User should be able to send messages to other people			
+5. User should be able to accept friend requests
+6. User should be able to delete friends
+*7. User should be able to cancel friend requests
+8.// Remote accessible data provider (Firebase database)
+9.// Data provided to user in real time
+*10.User should be able to register 
+*11.User should be able to recieve messages
+*12.User should be able to make Posts
+*13.User should be able to send email to whoever made a post
+*14.User should be able to edit profile 
+*15.User be able to log out
+*16.User should be able to see the UI with all necessary information 
+*17. User should be able to see other posts
+
+--------------------------------Non Function-------------------------------
+1. App to run on android system
+2. MVVM Model View View Model
+3. Android version (No Androidx)
+
+--------------------------------Classes Needed------------------------------
+1. User class
+2. Adapter 
+3. ViewModel
+4. RecyclerView
+5. Fragments 
+6. Post
+7. messages
+
+------------------------------------ Ordered List--------------------------------
+
+1.User should be able to see the UI with all necessary information 2
+2.User should be able to create profile 		9
+3.User should be able to make Posts		8
+4.User should be able to see other posts	6
+5.User should be able to display posts by category	3
+6.User should be able to send email to whoever made a post	2
+7.User should be able to send messages to other people	10
+8.User should be able to recieve messages		6
+9.User should be able to edit profile 		4
+10.User should be able to login			2
+11.User be able to log out					0.5
+12.User should be able to create a friend requests		10
+13.User should be able to accept/cancel friend requests		8
+
+Sprint 2 last day 27/11/2018
+Morning meeting. 10 minutes 
+we talk about what we have at hand and what we are aim to do today.
+like complete the UML Model with all necessary information,
+
+------------------------------------ Product BackLog--------------------------------
+
+1.User should be able to see the UI with all necessary information 2
+2.User should be able to create profile 		9
+3.User should be able to make Posts		8
+4.User should be able to see other posts	6
+5.User should be able to display posts by category	3
+6.User should be able to send email to whoever made a post	2
+7.User should be able to send messages to other people	10
+8.User should be able to recieve messages		6
+9.User should be able to edit profile 		4
+10.User should be able to login			2
+11.User be able to log out					0.5
+12.User should be able to create a friend requests		10
+13.User should be able to accept/cancel friend requests		8
+
