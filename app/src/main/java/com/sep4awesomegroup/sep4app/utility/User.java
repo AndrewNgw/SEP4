@@ -9,10 +9,10 @@ public class User {
     private String gender;
     private int age;
 
-    private User(String name, String email, List friends, String gender,int age){
+    public User(String name, String email, String gender,int age){
         this.name=name;
         this.email=email;
-        this.friends=friends;
+       // this.friends=friends;
         this.gender=gender;
         this.age=age;
     }
