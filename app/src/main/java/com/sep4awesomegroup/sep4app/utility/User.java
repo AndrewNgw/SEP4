@@ -1,4 +1,4 @@
-package com.sep4awesomegroup.sep4app;
+package com.sep4awesomegroup.sep4app.utility;
 
 import java.util.List;
 
