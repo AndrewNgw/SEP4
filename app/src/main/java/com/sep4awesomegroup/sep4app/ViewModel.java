@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
+import com.sep4awesomegroup.sep4app.utility.Post;
 import com.sep4awesomegroup.sep4app.utility.User;
 
 public class ViewModel extends AndroidViewModel {
@@ -17,5 +18,9 @@ public class ViewModel extends AndroidViewModel {
 
     public void addUser(User user){
         model.addUser(user);
+    }
+
+    public void addPost(Post post, String category){
+        model.addPost(post, category);
     }
 }
