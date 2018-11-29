@@ -3,4 +3,12 @@
     <string name="settings">Settings</string>
     <string name="summary">Turn this on or off</string>
 
+    <string name="tab_text_1">News</string>
+
+    <string name="tab_text_2">Profile</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="section_format">Hello World from section: %1$d</string>
+
 </resources>
