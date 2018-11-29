@@ -24,3 +24,4 @@ public class ViewModel extends AndroidViewModel {
         model.addPost(post, category);
     }
 }
+//asqhwdiqwhjadij
