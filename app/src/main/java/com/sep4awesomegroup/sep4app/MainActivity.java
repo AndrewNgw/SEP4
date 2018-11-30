@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
         //vm.addUser(new User("Alex", "hello@google.com", "male", 21));
         // Post
-        Button btnpost = (Button)findViewById(R.id.btnpost);
+        Button btnpost = (Button)findViewById(R.id.btn_post);
         btnpost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

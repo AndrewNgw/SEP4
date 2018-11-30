@@ -62,7 +62,8 @@
             android:layout_weight="2"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="@string/email"/>
+            android:hint="@string/email"
+            android:autofillHints="@string/email" />
 
     </LinearLayout>
 
@@ -110,7 +111,8 @@
             android:layout_marginEnd="16dp"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:autofillHints="@string/phone" />
 
     </LinearLayout>
     <LinearLayout
@@ -136,7 +138,8 @@
             android:layout_marginEnd="16dp"
             android:layout_weight="2"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:autofillHints="@string/age" />
 
     </LinearLayout>
 
@@ -183,7 +186,7 @@
         android:id="@+id/btn_camera"
         android:background="@android:color/holo_red_dark"
         android:textColor="@android:color/white"
-        android:text="Open Camera"/>
+        android:text="@string/Open_camera"/>
 
 </LinearLayout>
 </LinearLayout>
