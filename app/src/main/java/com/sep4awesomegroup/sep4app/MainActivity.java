@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
-        vm.addUser(new User("Alex", "hello@google.com", "male", 21));
+        //vm.addUser(new User("Alex", "hello@google.com", "male", 21));
     }
 
     @Override
