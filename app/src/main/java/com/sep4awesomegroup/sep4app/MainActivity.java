@@ -1,10 +1,19 @@
 package com.sep4awesomegroup.sep4app;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.arch.lifecycle.ViewModelProviders;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -21,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authlistener;
     private static final int RC_SIGN_IN = 1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
         authlistener = new FirebaseAuth.AuthStateListener() {
@@ -47,6 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
         ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
         //vm.addUser(new User("Alex", "hello@google.com", "male", 21));
+        // Post
+        Button btnpost = (Button)findViewById(R.id.btnpost);
+        btnpost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendUserToPost();
+            }
+        });
+
+    }
+
+    private void sendUserToPost()
+    {
+
+        Intent addPostIntent = new Intent(MainActivity.this,PostActivity.class);
+        startActivity(addPostIntent);
     }
 
     @Override
@@ -72,4 +99,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         firebaseAuth.removeAuthStateListener(authlistener);
     }
+
+
 }
