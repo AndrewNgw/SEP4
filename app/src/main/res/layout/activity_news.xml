@@ -15,5 +15,6 @@
         android:id="@+id/createPost_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="CREATE POST" />
+        android:text="CREATE POST"
+        android:onClick="createPost"/>
 </LinearLayout>

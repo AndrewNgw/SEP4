@@ -28,11 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*
-        List<Post> list = new ArrayList<>();
-        list.add(new Post("afafa", "helloo there how are you?", "10.10.2018"));
-        list.add(new Post("aaafa", " I dont caaare and I love it!", "10.10.2018"));
-       */
         firebaseAuth = FirebaseAuth.getInstance();
         authlistener = new FirebaseAuth.AuthStateListener() {
             @Override

@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.sep4awesomegroup.sep4app.utility.Post;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -17,6 +22,8 @@ public class PostActivity extends AppCompatActivity {
     private EditText txtPost;
     private String post;
     private ViewModel vm;
+    private EditText category;
+    private SimpleDateFormat dateFormater;
 
     // Create a storage reference from our app
 
@@ -26,11 +33,12 @@ public class PostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post);
 
         vm = ViewModelProviders.of(this).get(ViewModel.class);
+        dateFormater = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 
-        btnUpdate = (Button)findViewById(R.id.btn_post);
-        txtPost = (EditText)findViewById(R.id.editText);
-
+        btnUpdate = findViewById(R.id.btn_post);
+        txtPost = findViewById(R.id.editText);
+        category = findViewById(R.id.categoryText);
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,14 +58,10 @@ public class PostActivity extends AppCompatActivity {
         }
         else 
         {
-            storingTextToStorage();
+            String date = dateFormater.format(new Date());
+            vm.addPost(post, date, category.getText().toString());
+            finish();
         }
-    }
-
-    private void storingTextToStorage()
-    {
-
-        vm.addPost(new Post("blabla","Slum","03/12/2018"),"sugar free");
     }
 
 }
