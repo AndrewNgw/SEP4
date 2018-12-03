@@ -2,18 +2,23 @@ package com.sep4awesomegroup.sep4app;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.arch.lifecycle.ViewModelProviders;
+import android.widget.TableLayout;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
+import com.sep4awesomegroup.sep4app.utility.Post;
 import com.sep4awesomegroup.sep4app.utility.User;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         authlistener = new FirebaseAuth.AuthStateListener() {
