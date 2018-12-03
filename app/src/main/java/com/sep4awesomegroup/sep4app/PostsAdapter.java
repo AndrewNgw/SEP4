@@ -17,7 +17,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
     private List<Post> posts;
 
     public PostsAdapter(List<Post> posts){
-        posts = new ArrayList<Post>();
+        this.posts = posts;
     }
 
     @NonNull
@@ -49,6 +49,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
             super(itemView);
             date = itemView.findViewById(R.id.dateText);
             content = itemView.findViewById(R.id.contentText);
+        }
+    }
+
+    public void addPost(Post post){
+        posts.add(post);
+    }
+
+    public void removePost(Post post){
+        for (int i = 0; i < posts.size(); i++) {
+            if(posts.get(i).equals(post)){
+                posts.remove(i);
+            }
         }
     }
 }

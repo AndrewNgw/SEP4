@@ -1,5 +1,7 @@
 package com.sep4awesomegroup.sep4app.utility;
 
+import java.util.Objects;
+
 public class Post {
     private String authorId;
     private String content;
@@ -29,5 +31,15 @@ public class Post {
 
     public String getAuthorId() {
         return authorId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return Objects.equals(authorId, post.authorId) &&
+                Objects.equals(content, post.content) &&
+                Objects.equals(date, post.date);
     }
 }
