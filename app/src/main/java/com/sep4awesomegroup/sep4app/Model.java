@@ -8,8 +8,9 @@ public class Model {
     private UserDAO userDAO;
     private PostDAO postDAO;
 
-    public Model(){
+    public Model(PostsAdapter adapter){
          userDAO = new UserDAO();
+         postDAO = new PostDAO(adapter);
     }
 
     public void addUser(User user){

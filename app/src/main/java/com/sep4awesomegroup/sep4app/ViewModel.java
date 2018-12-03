@@ -14,10 +14,12 @@ public class ViewModel extends AndroidViewModel {
     private Model model;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    private PostsAdapter adapter;
 
     public ViewModel(@NonNull Application application){
         super(application);
-        model = new Model();
+        adapter = new PostsAdapter();
+        model = new Model(adapter);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
     }
@@ -26,7 +28,12 @@ public class ViewModel extends AndroidViewModel {
         model.addUser(user);
     }
 
-    public void addPost(Post post, String category){
+    public void addPost(String content, String date, String category){
+        Post post = new Post(firebaseUser.getUid(), content, date);
         model.addPost(post, category);
+    }
+
+    public PostsAdapter getAdapter(){
+        return adapter;
     }
 }

@@ -18,43 +18,12 @@ public class UserDAO {
     private DatabaseReference usersDtabaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-    private ChildEventListener childEventListener;
     //final PostsAdapter adapter
     public UserDAO(){
         myFirebaseDatabase = FirebaseDatabase.getInstance();
         usersDtabaseReference = myFirebaseDatabase.getReference().child("users");
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
-
-        childEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Post post = dataSnapshot.getValue(Post.class);
-                //adapter.addPost(post);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                Post salon =  dataSnapshot.getValue(Post.class);
-                //adapter.removeSalon(salon);
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-
-        };
     }
 
     public void insert(User user) {

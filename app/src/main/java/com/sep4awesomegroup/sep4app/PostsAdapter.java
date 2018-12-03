@@ -16,8 +16,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
 
     private List<Post> posts;
 
-    public PostsAdapter(List<Post> posts){
-        this.posts = posts;
+    public PostsAdapter(){
+        this.posts = new ArrayList<>();
     }
 
     @NonNull
