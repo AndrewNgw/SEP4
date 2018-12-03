@@ -23,7 +23,7 @@ public class Profile_Display_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile__display_, container, false);
+        return inflater.inflate(R.layout.activity_profileDisplay, container, false);
     }
 
 }
