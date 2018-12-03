@@ -19,8 +19,8 @@ public class UserDAO {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private ChildEventListener childEventListener;
-
-    public UserDAO(final PostsAdapter adapter){
+    //final PostsAdapter adapter
+    public UserDAO(){
         myFirebaseDatabase = FirebaseDatabase.getInstance();
         usersDtabaseReference = myFirebaseDatabase.getReference().child("users");
         firebaseAuth = FirebaseAuth.getInstance();
@@ -30,7 +30,7 @@ public class UserDAO {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Post post = dataSnapshot.getValue(Post.class);
-                adapter.addPost(post);
+                //adapter.addPost(post);
             }
 
             @Override

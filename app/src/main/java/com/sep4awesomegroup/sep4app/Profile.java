@@ -37,29 +37,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        authlistener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-
-                }
-                else{
-                    startActivityForResult(
-                            AuthUI.getInstance()
-                                    .createSignInIntentBuilder().setIsSmartLockEnabled(false)
-                                    .setAvailableProviders(Arrays.asList(
-                                            new AuthUI.IdpConfig.EmailBuilder().build()))
-                                    .build(),
-                            RC_SIGN_IN);
-                }
-            }
-        };
-
-        ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
-        vm.addUser(new User("Alex", "hello@google.com", "male", 21));
+        setContentView(R.layout.create_profile);
 
         //
         sp = (Spinner) findViewById(R.id.spinner);
@@ -72,16 +50,8 @@ public class Profile extends AppCompatActivity {
         sp.setAdapter(adapter);
 
         // Button camera
-        Button btnCamera = (Button)findViewById(R.id.btn_camera);
-        imageView = (ImageView)findViewById(R.id.imageView);
 
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,0);
-            }
-        });
+
     }
 
 

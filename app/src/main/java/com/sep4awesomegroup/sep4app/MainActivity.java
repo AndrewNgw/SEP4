@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -33,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerView);
+/*
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<Post> list = new ArrayList<>();
         list.add(new Post("afafa", "helloo there how are you?", "10.10.2018"));
         list.add(new Post("aaafa", " I dont caaare and I love it!", "10.10.2018"));
         adapter = new PostsAdapter(list);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);*/
         firebaseAuth = FirebaseAuth.getInstance();
         authlistener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -87,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         firebaseAuth.removeAuthStateListener(authlistener);
+    }
+
+    public void displayProfile(View v){
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
     }
 }
