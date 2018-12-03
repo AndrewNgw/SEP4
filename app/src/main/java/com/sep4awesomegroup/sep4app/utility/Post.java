@@ -7,6 +7,10 @@ public class Post {
     private String content;
     private String date;
 
+    public Post(){
+
+    }
+
     public Post(String authorId, String content, String date) {
         this.authorId = authorId;
         this.content = content;

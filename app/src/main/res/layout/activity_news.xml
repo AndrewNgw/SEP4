@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/news_view"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="504dp">
 
@@ -15,5 +15,6 @@
         android:id="@+id/createPost_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="CREATE POST" />
+        android:text="CREATE POST"
+        android:onClick="createPost"/>
 </LinearLayout>

@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authlistener;
     private static final int RC_SIGN_IN = 1;
-    private RecyclerView recyclerView;
     private PostsAdapter adapter;
 
     @Override
@@ -29,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*
-        recyclerView.hasFixedSize();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        List<Post> list = new ArrayList<>();
-        list.add(new Post("afafa", "helloo there how are you?", "10.10.2018"));
-        list.add(new Post("aaafa", " I dont caaare and I love it!", "10.10.2018"));
-        adapter = new PostsAdapter(list);
-        recyclerView.setAdapter(adapter);*/
         firebaseAuth = FirebaseAuth.getInstance();
         authlistener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -58,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
-        //vm.addUser(new User("Alex", "hello@google.com", "male", 21));
     }
 
     @Override
@@ -87,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayProfile(View v){
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void displayPosts(View v){
+        Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
     }
 }
