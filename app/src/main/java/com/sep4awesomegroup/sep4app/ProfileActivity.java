@@ -21,7 +21,11 @@ import com.sep4awesomegroup.sep4app.utility.User;
 
 import java.util.Arrays;
 
-public class createProfile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener authlistener;
+    private static final int RC_SIGN_IN = 1;
 
     // define spinner
     Spinner sp;
@@ -33,9 +37,7 @@ public class createProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
-        vm.addUser(new User("Alex", "hello@google.com", "male", 21));
+        setContentView(R.layout.create_profile);
 
         //
         sp = (Spinner) findViewById(R.id.spinner);
@@ -48,16 +50,8 @@ public class createProfile extends AppCompatActivity {
         sp.setAdapter(adapter);
 
         // Button camera
-        Button btnCamera = (Button)findViewById(R.id.btn_camera);
-        imageView = (ImageView)findViewById(R.id.imageView);
 
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,0);
-            }
-        });
+
     }
 
 
