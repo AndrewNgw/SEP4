@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(addPostIntent);
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }
+
     }
 
     @Override
