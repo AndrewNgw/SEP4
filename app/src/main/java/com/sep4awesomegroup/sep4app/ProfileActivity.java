@@ -37,10 +37,20 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.create_profile);
 
         vm = ViewModelProviders.of(this).get(ViewModel.class);
+        User currentUser = vm.getUser();
+        if (currentUser == null){
+            Toast.makeText(this, "user is null", Toast.LENGTH_SHORT).show();
+        }
 
         name = findViewById(R.id.nameText);
         email = findViewById(R.id.emailText);
         age = findViewById(R.id.ageText);
+
+        if (currentUser != null){
+            name.setText(currentUser.getName());
+            email.setText(currentUser.getEmail());
+            age.setText(currentUser.getAge());
+        }
 
         //
         sp = (Spinner) findViewById(R.id.spinner);

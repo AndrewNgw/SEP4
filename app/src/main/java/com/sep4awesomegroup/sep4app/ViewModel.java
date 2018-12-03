@@ -3,6 +3,7 @@ package com.sep4awesomegroup.sep4app;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,5 +36,9 @@ public class ViewModel extends AndroidViewModel {
 
     public PostsAdapter getAdapter(){
         return adapter;
+    }
+
+    public User getUser(){
+        return  model.getUser();
     }
 }

@@ -9,6 +9,10 @@ public class User {
     private String gender;
     private String age;
 
+    public User(){
+
+    }
+
     public User(String name, String email, String gender, String age){
         this.name=name;
         this.email=email;
