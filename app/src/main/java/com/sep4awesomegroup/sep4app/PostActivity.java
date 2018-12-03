@@ -28,7 +28,7 @@ public class PostActivity extends AppCompatActivity {
         vm = ViewModelProviders.of(this).get(ViewModel.class);
 
 
-        btnUpdate = (Button)findViewById(R.id.btnpost);
+        btnUpdate = (Button)findViewById(R.id.btn_post);
         txtPost = (EditText)findViewById(R.id.editText);
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
