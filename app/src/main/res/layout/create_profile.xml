@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile"
+    tools:context=".ProfileActivity"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -150,18 +150,17 @@
 
         <Button
             android:id="@+id/submit_action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_submit"
-            android:layout_weight="1"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_submit" />
 
         <Button
             android:id="@+id/cancel_action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            />
+            android:text="@string/btn_cancel" />
 
     </LinearLayout>
 </LinearLayout>

@@ -21,7 +21,7 @@ import com.sep4awesomegroup.sep4app.utility.User;
 
 import java.util.Arrays;
 
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authlistener;
