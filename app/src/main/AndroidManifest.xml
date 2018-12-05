@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".PostActivity" />
-        <activity android:name=".NewsActivity"></activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".OtherUserActivity"></activity>
     </application>
 
 </manifest>

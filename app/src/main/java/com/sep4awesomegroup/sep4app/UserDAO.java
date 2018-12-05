@@ -34,7 +34,7 @@ public class UserDAO {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
-                Log.d("HALO", user.getName());
+                //Log.d("HALO", user.getName());
             }
 
             @Override
@@ -42,7 +42,6 @@ public class UserDAO {
 
             }
         });
-
     }
 
     public void insert(User user) {
