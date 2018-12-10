@@ -1,6 +1,7 @@
 package com.sep4awesomegroup.sep4app;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class OtherUserActivity extends AppCompatActivity {
                     name.setText(currentUser.getName());
                     email.setText(currentUser.getEmail());
                     age.setText(currentUser.getAge());
+                    gender.setText(currentUser.getGender());
                 }
             }
 
@@ -65,7 +67,13 @@ public class OtherUserActivity extends AppCompatActivity {
     }
 
     public void writeEmail(View view){
-        Intent intent = new Intent();
-        startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse(email.getText().toString()));
+        intent.putExtra(Intent.EXTRA_SUBJECT,"");
+        intent.putExtra(Intent.EXTRA_TEXT, "");
+
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }
     }
 }

@@ -15,8 +15,47 @@ public class PostDAO implements IPostDAO{
     private DatabaseReference usersDtabaseReference;
     private ChildEventListener childEventListener;
 
-    public PostDAO(final PostsAdapter adapter) {
-        myFirebaseDatabase = FirebaseDatabase.getInstance();
+    public PostDAO() {
+        myFirebaseDatabase = FirebaseDatabase.getInstance();/*
+        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child("ocd");
+
+        childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Post post = dataSnapshot.getValue(Post.class);
+                adapter.addPost(post);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Post salon = dataSnapshot.getValue(Post.class);
+                //adapter.removeSalon(salon);
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+
+        usersDtabaseReference.addChildEventListener(childEventListener);*/
+    }
+
+    public void insert(Post post, String category){
+        myFirebaseDatabase.getReference().child("posts").child(category).push().setValue(post);
+    }
+
+    public void updateAdapter(final PostsAdapter adapter){
         usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child("ocd");
 
         childEventListener = new ChildEventListener() {
@@ -51,7 +90,5 @@ public class PostDAO implements IPostDAO{
         usersDtabaseReference.addChildEventListener(childEventListener);
     }
 
-    public void insert(Post post, String category){
-        myFirebaseDatabase.getReference().child("posts").child(category).push().setValue(post);
-    }
+
 }

@@ -11,9 +11,9 @@ public class Model {
     private UserDAO userDAO;
     private PostDAO postDAO;
 
-    public Model(PostsAdapter adapter){
+    public Model(){
          userDAO = new UserDAO();
-         postDAO = new PostDAO(adapter);
+         postDAO = new PostDAO();
     }
 
     public void addUser(User user){
@@ -25,8 +25,8 @@ public class Model {
         postDAO.insert(post, category);
     }
 
-    public User getUser(){
-        return userDAO.getUser();
+    public void getUser(ICallBack myCallback){
+        userDAO.getUser(myCallback);
     }
 
     private static class AddUserAsynkTask extends AsyncTask<User, Void, Void> {
@@ -41,5 +41,9 @@ public class Model {
             userDAO.insert(hairSalons[0]);
             return null;
         }
+    }
+
+    public void updateAdapter(PostsAdapter adapter){
+        postDAO.updateAdapter(adapter);
     }
 }

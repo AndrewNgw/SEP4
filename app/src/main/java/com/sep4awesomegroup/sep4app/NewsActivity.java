@@ -8,7 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class NewsActivity extends AppCompatActivity {
+public class NewsActivity extends AppCompatActivity implements OnListItemClickListener {
 
     private RecyclerView recyclerView;
     private ViewModel vm;
@@ -19,17 +19,26 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         vm = ViewModelProviders.of(this).get(ViewModel.class);
-
+        PostsAdapter adapter = new PostsAdapter(this);
+        vm.updateAdapter(adapter);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
+        manager.setStackFromEnd(true);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(vm.getAdapter());
+        recyclerView.setAdapter(adapter);
     }
 
     public void createPost(View view){
         Intent intent = new Intent(this, PostActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onListItemClick(String authorId) {
+        Intent intent = new Intent(this, OtherUserActivity.class);
+        intent.putExtra("id", authorId);
         startActivity(intent);
     }
 }

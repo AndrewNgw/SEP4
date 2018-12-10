@@ -27,7 +27,7 @@ import com.sep4awesomegroup.sep4app.utility.User;
 
 import java.util.Arrays;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity implements ICallBack{
 
     private Spinner sp;
     private ArrayAdapter<String> adapter;
@@ -65,7 +65,8 @@ public class ProfileActivity extends AppCompatActivity {
         // set adapter to spinner
         sp.setAdapter(adapter);
 
-        setUserProfile();
+        vm.getUser(this);
+        //setUserProfile();
     }
 
     public void updateProfile(View v){
@@ -77,28 +78,12 @@ public class ProfileActivity extends AppCompatActivity {
         finish();
     }
 
-    public void setUserProfile(){
-        FirebaseDatabase myFirebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference usersDtabaseReference = myFirebaseDatabase.getReference().child("users");
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-
-        DatabaseReference ref = usersDtabaseReference.child(firebaseUser.getUid());
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User currentUser = dataSnapshot.getValue(User.class);
-                if (currentUser != null){
-                    name.setText(currentUser.getName());
-                    email.setText(currentUser.getEmail());
-                    age.setText(currentUser.getAge());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+    @Override
+    public void setUserProfile(User user){
+        if (user != null){
+            name.setText(user.getName());
+            email.setText(user.getEmail());
+            age.setText(user.getAge());
+        }
     }
 }
