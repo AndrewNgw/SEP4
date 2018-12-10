@@ -14,7 +14,9 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="NEWS"
-        android:onClick="displayPosts" />
+        android:onClick="displayPosts"
+        android:background="@drawable/btn_background"
+        />
 
     <Button
         android:id="@+id/profile_button"
@@ -22,6 +24,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="PROFILE"
-        android:onClick="displayProfile" />
+        android:onClick="displayProfile"
+        android:background="@drawable/btn_background"
+        />
 
 </LinearLayout>
