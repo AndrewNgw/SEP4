@@ -48,7 +48,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
+        //ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AuthUI.getInstance().signOut(this);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.sep4awesomegroup.sep4app;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.sep4awesomegroup.sep4app.utility.Post;
 import com.sep4awesomegroup.sep4app.utility.User;
@@ -17,7 +16,6 @@ public class Model {
     }
 
     public void addUser(User user){
-        //userDAO.insert(user);
         new AddUserAsynkTask(userDAO).execute(user);
     }
 
