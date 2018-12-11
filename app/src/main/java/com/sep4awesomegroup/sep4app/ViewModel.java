@@ -42,7 +42,7 @@ public class ViewModel extends AndroidViewModel {
         model.getUser(myCallback);
     }
 
-    public void updateAdapter(PostsAdapter adapter){
-        model.updateAdapter(adapter);
+    public void updateAdapter(PostsAdapter adapter, String category){
+        model.updateAdapter(adapter, category);
     }
 }

@@ -43,7 +43,7 @@ public class Model {
         }
     }
 
-    public void updateAdapter(PostsAdapter adapter){
-        postDAO.updateAdapter(adapter);
+    public void updateAdapter(PostsAdapter adapter, String category){
+        postDAO.updateAdapter(adapter, category);
     }
 }

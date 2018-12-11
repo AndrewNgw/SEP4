@@ -16,47 +16,15 @@ public class PostDAO implements IPostDAO{
     private ChildEventListener childEventListener;
 
     public PostDAO() {
-        myFirebaseDatabase = FirebaseDatabase.getInstance();/*
-        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child("ocd");
-
-        childEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Post post = dataSnapshot.getValue(Post.class);
-                adapter.addPost(post);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                Post salon = dataSnapshot.getValue(Post.class);
-                //adapter.removeSalon(salon);
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
-
-        usersDtabaseReference.addChildEventListener(childEventListener);*/
+        myFirebaseDatabase = FirebaseDatabase.getInstance();
     }
 
     public void insert(Post post, String category){
         myFirebaseDatabase.getReference().child("posts").child(category).push().setValue(post);
     }
 
-    public void updateAdapter(final PostsAdapter adapter){
-        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child("ocd");
+    public void updateAdapter(final PostsAdapter adapter, String category){
+        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child(category);
 
         childEventListener = new ChildEventListener() {
             @Override
