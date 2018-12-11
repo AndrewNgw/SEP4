@@ -35,8 +35,8 @@ public class Model implements IModel{
         }
 
         @Override
-        protected Void doInBackground(User... hairSalons) {
-            userDAO.insert(hairSalons[0]);
+        protected Void doInBackground(User... users) {
+            userDAO.insert(users[0]);
             return null;
         }
     }

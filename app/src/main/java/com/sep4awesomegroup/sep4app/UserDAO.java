@@ -11,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.sep4awesomegroup.sep4app.common.User;
 
-public class UserDAO {
+public class UserDAO implements IUserDAO{
     private FirebaseDatabase myFirebaseDatabase;
     private DatabaseReference usersDtabaseReference;
     private DatabaseReference ref;
