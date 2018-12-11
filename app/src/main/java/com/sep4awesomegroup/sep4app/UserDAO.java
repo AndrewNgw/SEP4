@@ -15,7 +15,7 @@ import com.google.firebase.database.annotations.Nullable;
 import com.sep4awesomegroup.sep4app.utility.Post;
 import com.sep4awesomegroup.sep4app.utility.User;
 
-public class UserDAO {
+public class UserDAO implements IUserDAO{
     private FirebaseDatabase myFirebaseDatabase;
     private DatabaseReference usersDtabaseReference;
     private DatabaseReference ref;
@@ -36,13 +36,13 @@ public class UserDAO {
     public void insert(User user) {
         usersDtabaseReference.child(firebaseUser.getUid()).setValue(user);
     }
+
     public void getUser(final ICallBack myCallback){
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
                 myCallback.setUserProfile(user);
-                //Log.d("HALO", user.getName());
             }
 
             @Override

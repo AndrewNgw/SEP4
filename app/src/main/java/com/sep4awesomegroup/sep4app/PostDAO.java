@@ -40,8 +40,7 @@ public class PostDAO implements IPostDAO{
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                Post salon = dataSnapshot.getValue(Post.class);
-                //adapter.removeSalon(salon);
+
             }
 
             @Override
