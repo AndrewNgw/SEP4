@@ -1,19 +1,15 @@
 package com.sep4awesomegroup.sep4app;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.annotations.Nullable;
-import com.sep4awesomegroup.sep4app.utility.Post;
-import com.sep4awesomegroup.sep4app.utility.User;
+import com.sep4awesomegroup.sep4app.common.User;
 
 public class UserDAO {
     private FirebaseDatabase myFirebaseDatabase;
@@ -42,7 +38,6 @@ public class UserDAO {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
                 myCallback.setUserProfile(user);
-                //Log.d("HALO", user.getName());
             }
 
             @Override

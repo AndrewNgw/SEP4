@@ -2,10 +2,10 @@ package com.sep4awesomegroup.sep4app;
 
 import android.os.AsyncTask;
 
-import com.sep4awesomegroup.sep4app.utility.Post;
-import com.sep4awesomegroup.sep4app.utility.User;
+import com.sep4awesomegroup.sep4app.common.Post;
+import com.sep4awesomegroup.sep4app.common.User;
 
-public class Model {
+public class Model implements IModel{
 
     private UserDAO userDAO;
     private PostDAO postDAO;

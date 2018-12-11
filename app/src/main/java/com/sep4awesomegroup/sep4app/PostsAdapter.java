@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.sep4awesomegroup.sep4app.utility.Post;
+import com.sep4awesomegroup.sep4app.common.Post;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,12 +67,4 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
         notifyDataSetChanged();
     }
 
-    public void removePost(Post post){
-        for (int i = 0; i < posts.size(); i++) {
-            if(posts.get(i).equals(post)){
-                posts.remove(i);
-            }
-        }
-        notifyDataSetChanged();
-    }
 }

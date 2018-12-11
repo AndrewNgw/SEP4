@@ -1,4 +1,4 @@
-package com.sep4awesomegroup.sep4app.utility;
+package com.sep4awesomegroup.sep4app.common;
 
 public class Message {
     private String message;

@@ -6,19 +6,17 @@ import android.support.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.sep4awesomegroup.sep4app.utility.Post;
-import com.sep4awesomegroup.sep4app.utility.User;
+import com.sep4awesomegroup.sep4app.common.Post;
+import com.sep4awesomegroup.sep4app.common.User;
 
-public class ViewModel extends AndroidViewModel {
+public class ViewModel extends AndroidViewModel implements IViewModel{
 
     private Model model;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-    //private PostsAdapter adapter;
 
     public ViewModel(@NonNull Application application){
         super(application);
-        //adapter = new PostsAdapter();
         model = new Model();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -32,10 +30,6 @@ public class ViewModel extends AndroidViewModel {
         Post post = new Post(firebaseUser.getUid(), content, date);
         model.addPost(post, category);
     }
-
-    /*public PostsAdapter getAdapter(){
-        return adapter;
-    }*/
 
     public void getUser(ICallBack myCallback){
         model.getUser(myCallback);
