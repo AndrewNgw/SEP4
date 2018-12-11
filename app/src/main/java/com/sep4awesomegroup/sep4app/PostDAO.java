@@ -15,9 +15,16 @@ public class PostDAO implements IPostDAO{
     private DatabaseReference usersDtabaseReference;
     private ChildEventListener childEventListener;
 
-    public PostDAO(final PostsAdapter adapter) {
+    public PostDAO() {
         myFirebaseDatabase = FirebaseDatabase.getInstance();
-        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child("ocd");
+    }
+
+    public void insert(Post post, String category){
+        myFirebaseDatabase.getReference().child("posts").child(category).push().setValue(post);
+    }
+
+    public void updateAdapter(final PostsAdapter adapter, String category){
+        usersDtabaseReference = myFirebaseDatabase.getReference().child("posts").child(category);
 
         childEventListener = new ChildEventListener() {
             @Override
@@ -51,7 +58,5 @@ public class PostDAO implements IPostDAO{
         usersDtabaseReference.addChildEventListener(childEventListener);
     }
 
-    public void insert(Post post, String category){
-        myFirebaseDatabase.getReference().child("posts").child(category).push().setValue(post);
-    }
+
 }

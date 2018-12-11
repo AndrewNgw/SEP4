@@ -17,12 +17,17 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.Nullable;
 import com.sep4awesomegroup.sep4app.utility.User;
 
 import java.util.Arrays;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity implements ICallBack{
 
     private Spinner sp;
     private ArrayAdapter<String> adapter;
@@ -37,20 +42,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.create_profile);
 
         vm = ViewModelProviders.of(this).get(ViewModel.class);
-        User currentUser = vm.getUser();
-        if (currentUser == null){
-            Toast.makeText(this, "user is null", Toast.LENGTH_SHORT).show();
-        }
 
         name = findViewById(R.id.nameText);
         email = findViewById(R.id.emailText);
         age = findViewById(R.id.ageText);
-
-        if (currentUser != null){
-            name.setText(currentUser.getName());
-            email.setText(currentUser.getEmail());
-            age.setText(currentUser.getAge());
-        }
 
         //
         sp = (Spinner) findViewById(R.id.spinner);
@@ -59,6 +54,8 @@ public class ProfileActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // set adapter to spinner
         sp.setAdapter(adapter);
+
+        vm.getUser(this);
     }
 
     public void updateProfile(View v){
@@ -68,5 +65,14 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void closeActivity(View v){
         finish();
+    }
+
+    @Override
+    public void setUserProfile(User user){
+        if (user != null){
+            name.setText(user.getName());
+            email.setText(user.getEmail());
+            age.setText(user.getAge());
+        }
     }
 }

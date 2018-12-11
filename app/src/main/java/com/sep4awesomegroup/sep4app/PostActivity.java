@@ -51,7 +51,6 @@ public class PostActivity extends AppCompatActivity {
     {
         post = txtPost.getText().toString();
 
-        //validation
         if(post == null)
         {
             Toast.makeText(this,"Please write something to post",Toast.LENGTH_SHORT);

@@ -30,11 +30,19 @@ public class UserDAO {
         firebaseUser = firebaseAuth.getCurrentUser();
 
         ref = usersDtabaseReference.child(firebaseUser.getUid());
+
+    }
+
+    public void insert(User user) {
+        usersDtabaseReference.child(firebaseUser.getUid()).setValue(user);
+    }
+    public void getUser(final ICallBack myCallback){
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
-                Log.d("HALO", user.getName());
+                myCallback.setUserProfile(user);
+                //Log.d("HALO", user.getName());
             }
 
             @Override
@@ -42,13 +50,5 @@ public class UserDAO {
 
             }
         });
-
-    }
-
-    public void insert(User user) {
-        usersDtabaseReference.child(firebaseUser.getUid()).setValue(user);
-    }
-    public User getUser(){
-        return user;
     }
 }

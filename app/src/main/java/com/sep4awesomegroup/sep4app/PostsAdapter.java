@@ -15,9 +15,11 @@ import java.util.List;
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> {
 
     private List<Post> posts;
+    final private OnListItemClickListener mOnListItemClickListener;
 
-    public PostsAdapter(){
+    public PostsAdapter(OnListItemClickListener listener){
         this.posts = new ArrayList<>();
+        mOnListItemClickListener = listener;
     }
 
     @NonNull
@@ -33,6 +35,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
         Post currentPost = posts.get(i);
         postHolder.date.setText(currentPost.getDate());
         postHolder.content.setText(currentPost.getContent());
+        postHolder.authorId = currentPost.getAuthorId();
     }
 
     @Override
@@ -40,15 +43,22 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostHolder> 
         return posts.size();
     }
 
-    class PostHolder extends RecyclerView.ViewHolder {
+    class PostHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView date;
         TextView content;
+        String authorId;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
             date = itemView.findViewById(R.id.dateText);
             content = itemView.findViewById(R.id.contentText);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            mOnListItemClickListener.onListItemClick(authorId);
         }
     }
 
