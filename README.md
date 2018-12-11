@@ -1,5 +1,7 @@
 # SEP4
-Android Studio
+
+youtube link for the video presentation:
+https://www.youtube.com/watch?v=MM60KwYbgio&t=25s
 
 
 ------------------------------Requirements-------------------------
