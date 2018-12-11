@@ -1,7 +1,7 @@
 # SEP4
 
 youtube link for the video presentation:
-https://www.youtube.com/watch?v=MM60KwYbgio&t=25s
+https://www.youtube.com/watch?v=MM60KwYbgio
 
 
 ------------------------------Requirements-------------------------
