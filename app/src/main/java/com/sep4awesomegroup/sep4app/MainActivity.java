@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authlistener;
     private static final int RC_SIGN_IN = 1;
-    private PostsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
-        //ViewModel vm = ViewModelProviders.of(this).get(ViewModel.class);
     }
 
     @Override

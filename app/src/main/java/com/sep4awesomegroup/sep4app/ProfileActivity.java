@@ -1,31 +1,14 @@
 package com.sep4awesomegroup.sep4app;
 
-import android.content.Intent;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.arch.lifecycle.ViewModelProviders;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.annotations.Nullable;
-import com.sep4awesomegroup.sep4app.utility.User;
-
-import java.util.Arrays;
+import com.sep4awesomegroup.sep4app.common.User;
 
 public class ProfileActivity extends AppCompatActivity implements ICallBack{
 
@@ -34,7 +17,7 @@ public class ProfileActivity extends AppCompatActivity implements ICallBack{
     private TextView name;
     private TextView email;
     private TextView age;
-    private ViewModel vm;
+    private IViewModel vm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,11 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.auth.api.signin.internal.Storage;
-import com.sep4awesomegroup.sep4app.utility.Post;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,11 +17,9 @@ public class PostActivity extends AppCompatActivity {
     private Button btnUpdate;
     private EditText txtPost;
     private String post;
-    private ViewModel vm;
+    private IViewModel vm;
     private EditText category;
     private SimpleDateFormat dateFormater;
-
-    // Create a storage reference from our app
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,14 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.sep4awesomegroup.sep4app.utility.User;
+import com.sep4awesomegroup.sep4app.common.User;
 
 public class OtherUserActivity extends AppCompatActivity {
 

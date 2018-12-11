@@ -1,7 +1,6 @@
 package com.sep4awesomegroup.sep4app;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -10,9 +9,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.sep4awesomegroup.sep4app.utility.User;
+import com.sep4awesomegroup.sep4app.common.User;
 
-public class UserDAO implements IUserDAO{
+public class UserDAO {
     private FirebaseDatabase myFirebaseDatabase;
     private DatabaseReference usersDtabaseReference;
     private DatabaseReference ref;
@@ -33,7 +32,6 @@ public class UserDAO implements IUserDAO{
     public void insert(User user) {
         usersDtabaseReference.child(firebaseUser.getUid()).setValue(user);
     }
-
     public void getUser(final ICallBack myCallback){
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

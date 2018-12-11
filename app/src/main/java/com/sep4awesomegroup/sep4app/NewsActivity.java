@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class NewsActivity extends AppCompatActivity implements OnListItemClickListener {
 
     private RecyclerView recyclerView;
-    private ViewModel vm;
+    private IViewModel vm;
     private PostsAdapter adapter;
     private TextView searchField;
 
@@ -28,9 +28,11 @@ public class NewsActivity extends AppCompatActivity implements OnListItemClickLi
         vm.updateAdapter(adapter, "ocd");
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
+
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
         manager.setStackFromEnd(true);
+
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
     }
